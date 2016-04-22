@@ -42,6 +42,14 @@ class Spider(object):
                             print song_title
                             output.writelines(str(count) + ' '+song_title+' '+randint(1,5)+'\n')
                         output.writelines('\n')
+
+                        '''
+                        酷狗抓取的思路应该没错
+                        用 r=requests.post('http://sdn.kugou.com/link.aspx',data={'id':12116,'url':'','t':0.0023})
+>>> print r.content
+{"status":0,"error_code":20019,"data":""}
+                        用 fiddler 来抓包
+                        '''
             # res=''.join(content)
 
 
