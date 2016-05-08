@@ -123,8 +123,8 @@ class Spider(object):
                     continue
                 new_title = b64encode(title)
                 
-                with open('temp.txt', 'a') as output:
-                    if index<=400000:
+                with open('temp1.txt', 'a') as output:
+                    if index<=80000:
                         output.writelines(
                             UserID + ' ' + new_title + ' ' + url +' '+rating + '\n')
                     else:
@@ -133,10 +133,10 @@ class Spider(object):
                 index+=1
         
         '''
-        with open('temp.txt','r') as input:
+        with open('temp1.txt','r') as input:
             index =1
             for line in input:
-                if index>=40000:
+                if index>=100000:
                     break
                 with open('res.txt','a') as output:
                     output.writelines(line)

@@ -56,3 +56,41 @@ class Spider(object):
 if __name__ == '__main__':
     spider = Spider()
     spider.crawl_kugo()
+
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.6.0.jar \
+-file /home/hadoop/mapper.py    -mapper /home/hadoop/mapper.py \
+-file /home/hadoop/reducer.py   -reducer /home/hadoop/reducer.py \
+-input /user/hadoop/* -output /user/hadoop/
+
+hadoop jar hadoop-streaming-2.5.2.jar \
+    -input myInputDirs \
+    -output myOutputDir \
+    -mapper myPythonScript.py \
+    -reducer /usr/bin/wc \
+    -file myPythonScript.py \
+    -file myDictionary.txt
+
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.6.0.jar \
+-input /user/hadoop/* \
+-output /user/hadoop/temp1 \
+-mapper /home/hadoop/mapper.py \
+-reducer /home/hadoop/reducer.py
+
+
+# 下面的是最终可以执行的方法
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.6.0.jar \
+-input /user/hadoop/* -output /user/hadoop/temp1 -mapper /home/hadoop/mapper.py \
+-reducer /home/hadoop/reducer.py
+
+
+yue_chinese_song
+europe_song
+japan_song
+dj_song
+traditional_song
+electric_song
+mental_song
+lyric_song
+pure_song
+grand_song
+chinese_song
